@@ -15,9 +15,13 @@ const PlaceOrder = () => {
     const [data, setData] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${id}`)
+        window.scrollTo(0, 0);
+        fetch(`https://bloodcurdling-skeleton-61887.herokuapp.com/services/${id}`)
             .then(res => res.json())
-            .then(result => setData(result));
+            .then(result => {
+                setData(result)
+            });
+
     }, []);
 
     // notify function 
@@ -37,7 +41,7 @@ const PlaceOrder = () => {
         orderInfo["img"] = data.img;
         orderInfo["itemId"] = data._id;
         orderInfo['status'] = 'Pending';
-        axios.post('http://localhost:5000/order', orderInfo)
+        axios.post('https://bloodcurdling-skeleton-61887.herokuapp.com/order', orderInfo)
             .then(res => {
                 console.log('res', res);
                 if (res.status === 200) {
@@ -113,8 +117,9 @@ const PlaceOrder = () => {
                             <input type='date' className='w-100 mb-4 border-warning border-bottom-3 py-2 rounded px-2 bg-transparent border text-white' defaultValue={date} {...register("date")} />
                             <br />
                             {/* include validation with required or other standard HTML validation rules */}
+                            <input placeholder='Address' autoFocus className='w-100 mb-4 border-warning border-bottom-3 py-2 rounded px-2 bg-transparent border text-white' {...register("address", { required: true })} />
                             <input placeholder='Description' className='w-100 mb-4 border-warning border-bottom-3 py-2 rounded px-2 bg-transparent border text-white' {...register("description", { required: true })} />
-                            <input placeholder='Address' className='w-100 mb-4 border-warning border-bottom-3 py-2 rounded px-2 bg-transparent border text-white' {...register("address", { required: true })} />
+
 
                             <input placeholder='Event Name' className='w-100 mb-4 border-warning border-bottom-3 py-2 rounded px-2 bg-transparent border text-white' defaultValue={data.name} {...register("itemName", { required: true })} />
                             {/* errors will return when field validation fails  */}

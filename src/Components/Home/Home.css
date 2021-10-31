@@ -1,1 +1,73 @@
- 
+.clip-container{
+    position:relative; 
+    height:600px;
+    background:#111;
+    overflow: hidden; 
+}
+.clip-container .clip{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    transition:0.5s; 
+}
+.clip-container .clip.clip1{
+    background:url(https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F1171238184%2F0x0.jpg%3Ffit%3Dscale);
+    background-size:cover;
+    clip-path: polygon(0 0, 55% 0, 20% 100%, 0% 100%);
+}
+.clip-container .clip.clip2{
+  
+    
+    background:url(https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGxhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80);
+    background-size:cover;
+    clip-path: polygon(55% 0, 100% 0, 45% 100%, 20% 100%);
+}
+.clip-container .clip.clip3{
+    
+    background:url(https://wallpaperaccess.com/full/427831.jpg);
+    background-size:cover;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 45% 100%);
+}
+.clip-container:hover .clip{
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+.clip-container .clip:hover{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.content{
+    position:absolute;
+    bottom:-100%;
+    left:0;
+    width:100%;
+    padding:10px; 
+    backdrop-filter:blur(5px);
+    opacity:0;
+    transition:0.5s;
+}
+.clip-container .clip:hover .content{
+    bottom:0;
+    opacity:1;
+}
+
+/* bottom banner style */
+.bottom-banner{ 
+    background-image: url(https://wanderers.qodeinteractive.com/wp-content/uploads/2018/02/h1-background-3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0 0 200px ; 
+}
+.bottom-banner .icon-container{
+    opacity: .7;
+    transition: .3s;
+}
+.bottom-banner .icon-container:hover{
+    opacity: 1;
+}
+.bottom-banner h1{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px rgb(181, 175, 175);
+}

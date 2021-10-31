@@ -1,3 +1,11 @@
 .place-order-from{
     background: rgba(255, 225, 225, 0.085)!important;;
 }
+.card-btn i { 
+    transform: translateX(-200px);
+    transition: .8s ease-in;
+
+}
+.card-btn:hover i {
+    transform: translateX(0); 
+}

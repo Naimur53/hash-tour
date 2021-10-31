@@ -6,14 +6,14 @@ const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
     const [approve, setApprove] = useState(0)
     useEffect(() => {
-        axios.get('http://localhost:5000/allOrders').then(result => setOrders(result.data));
+        axios.get('https://bloodcurdling-skeleton-61887.herokuapp.com/allOrders').then(result => setOrders(result.data));
     }, [approve]);
     console.log(orders);
 
     const handleApprove = orderInfo => {
         const { _id } = orderInfo;
         console.log(_id);
-        axios.put(`http://localhost:5000/allOrders/${_id}`, { status: 'Approve' }).then(res => {
+        axios.put(`https://bloodcurdling-skeleton-61887.herokuapp.com/allOrders/${_id}`, { status: 'Approve' }).then(res => {
             console.log(res);
             if (res.data.matchedCount) {
                 setApprove(approve + 1);
@@ -24,16 +24,17 @@ const ManageOrders = () => {
     }
 
     const handleDelete = id => {
-        axios.delete(`http://localhost:5000/allOrders/${id}`).then(res => {
-            if (res.data.deletedCount) {
-                const remaining = orders.filter(order => order._id !== id);
-                setOrders(remaining);
-            }
-        })
-        console.log(id);
+        if (window.confirm("Are your sure to delete this order")) {
+            axios.delete(`https://bloodcurdling-skeleton-61887.herokuapp.com/allOrders/${id}`).then(res => {
+                if (res.data.deletedCount) {
+                    const remaining = orders.filter(order => order._id !== id);
+                    setOrders(remaining);
+                }
+            })
+        }
     }
     return (
-        <Container className='py-5' >
+        <Container className='py-5 min-vh-100' >
             <Table variant="dark" striped bordered hover className='text-warning'>
                 <thead>
                     <tr>

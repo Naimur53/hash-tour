@@ -10,6 +10,10 @@ import MyOrders from './Components/MyOrders/MyOrders';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import AuthProvider from './context/AuthProvider';
+import Footer from './Components/Footer/Footer';
+import NotFound from './Components/NotFound/NotFound';
+import AboutUs from './Components/AboutUs/AboutUs';
+import ContactUS from './Components/ContactUs/ContactUS';
 
 function App() {
   return (
@@ -27,6 +31,12 @@ function App() {
             <Route path='/login'>
               <Login></Login>
             </Route>
+            <Route path='/aboutus'>
+              <AboutUs></AboutUs>
+            </Route>
+            <Route path='/contactus'>
+              <ContactUS></ContactUS>
+            </Route>
             <PrivateRoute path='/placeOrder/:id'>
               <PlaceOrder></PlaceOrder>
             </PrivateRoute>
@@ -39,7 +49,11 @@ function App() {
             <Route path='/addService'>
               <AddService></AddService>
             </Route>
+            <Route path='*'>
+              <NotFound></NotFound>
+            </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>

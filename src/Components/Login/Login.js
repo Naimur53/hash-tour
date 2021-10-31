@@ -19,9 +19,8 @@ const Login = () => {
             })
     }
     return (
-        <div className='container'>
-            <h1>login</h1>
-            <button onClick={handleClick} className='btn btn-primary'>login with google</button>
+        <div style={{ minHeight: '60vh' }} className='container d-flex align-items-center justify-content-center'>
+            <button onClick={handleClick} className='btn btn-transparent text-center bg-white    fs-5'><i style={{ fontSize: '40px' }} className="text-warning fab fa-google border p-3 bg-dark rounded-circle"></i> Login with google</button>
         </div>
     );
 };

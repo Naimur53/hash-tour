@@ -1,0 +1,6 @@
+.location-box , .contact-form{ 
+    box-shadow: 1px 1px 15px #ffffff32; 
+}
+.location-box i{
+    border: 1px solid #c7c7c7; 
+}

@@ -5,6 +5,7 @@ import useAuth from '../../hooks/useAuth';
 
 const MainNav = () => {
     const { user, handleSignOut } = useAuth();
+    console.log(user);
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" sticky="top" variant="dark">
             <Container>
@@ -13,6 +14,8 @@ const MainNav = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
                         <Nav.Link activeClassName='text-warning' as={NavLink} to='/home'>Home</Nav.Link>
+                        <Nav.Link activeClassName='text-warning' as={NavLink} to='/aboutus'>About us</Nav.Link>
+                        <Nav.Link activeClassName='text-warning' as={NavLink} to='/contactus'>Contact us</Nav.Link>
 
                         {
                             user.displayName && <Nav.Link activeClassName='text-warning' as={NavLink} to='/myOrders'>My Orders</Nav.Link>
@@ -25,8 +28,15 @@ const MainNav = () => {
                         }
                     </Nav>
                     <Nav>
+
                         {
-                            user.displayName ? <button className='btn btn-warning px-5 rounded-0' onClick={handleSignOut}>LogOut</button> : <Nav.Link activeClassName='text-warning' as={NavLink} to='/login'>Login</Nav.Link>
+                            user.photoURL && <img style={{ width: '50px', height: '50px' }} className=' rounded-circle me-3' src={user.photoURL} alt="" />
+                        }
+                        {
+                            user.displayName && <span className='text-white text-center my-auto me-3'>{user.displayName}</span>
+                        }
+                        {
+                            user.displayName ? <button className='btn btn-warning px-5 rounded-0 ' onClick={handleSignOut}>LogOut</button> : <Nav.Link activeClassName='text-warning' as={NavLink} to='/login'>Login</Nav.Link>
                         }
                     </Nav>
                 </Navbar.Collapse>

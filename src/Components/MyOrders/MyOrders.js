@@ -8,20 +8,20 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     const email = user.email;
     useEffect(() => {
-        axios.get(`http://localhost:5000/myorders?user=${email}`)
+        axios.get(`https://bloodcurdling-skeleton-61887.herokuapp.com/myorders?user=${email}`)
             .then(result => setOrders(result.data))
 
     }, []);
 
     const notify = () => {
-        toast.success("Success Notification !", {
+        toast.success("Successfully delete !", {
             position: toast.POSITION.TOP_CENTER,
             autoClose: 2000,
         });
     };
     const handleDelete = _id => {
         if (window.confirm("Are you sure")) {
-            axios.delete(`http://localhost:5000/myorder/${_id}`).then(res => {
+            axios.delete(`https://bloodcurdling-skeleton-61887.herokuapp.com/myorder/${_id}`).then(res => {
                 if (res.data.deletedCount) {
                     notify();
                     const remaining = orders.filter(order => order._id !== _id);
@@ -31,7 +31,7 @@ const MyOrders = () => {
         }
     }
     return (
-        <div className='container'>
+        <div className='container min-vh-100 pt-5'>
             <div className="row row-cols-1 row-cols-md-2 g-4">
                 {
                     orders.map(order => <MyOrderCard key={order._id} handleDelete={handleDelete} info={order}></MyOrderCard>)
@@ -39,9 +39,6 @@ const MyOrders = () => {
             </div>
 
             <ToastContainer />
-
-
-
         </div>
     );
 };
