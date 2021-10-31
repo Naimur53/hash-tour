@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Lake Wānaka",
+        "img": "https://sites.google.com/a/doversherborn.org/dshs-tanaka-new-zealand/_/rsrc/1467887056821/tourist-attractions/hobbiton.jpg",
+        "des": "Lake Wānaka is New Zealands fourth-largest lake and the seat of the town of Wānaka in the Otago region. The lake is 278 meters above sea level, covers 192 km², and is more than 300 m deep",
+        "price": 349
+    },
+    {
+        "name": "Affordable Yacht Charter",
+        "img": "https://images.truehab.com/730x410/filters:format(webp)/0000/1/2020/01/10/thumb-371866-cover-header.jpeg",
+        "des": "Hire private luxury yacht rental Dubai for all types of events and occasions. Book Today! Luxurious yacht charters in Dubai at cheaper prices with best yachting services & support. Luxury Yacht Charter. Affordable Yacht Charter",
+        "price": 546
+    },
+    {
+        "name": "assam tourist",
+        "img": "https://img.traveltriangle.com/blog/wp-content/uploads/2018/02/assam-tourist-places.jpg",
+        "des": "Assam is a state in northeastern India known for its wildlife, archeological sites and tea plantations. In the west, Guwahati, Assam’s largest city, features silk bazaars and the hilltop Kamakhya Temple. Umananda Temple sits on Peacock Island in the Brahmaputra river",
+        "price": 645
+    },
+    {
+        "name": "dubai marina",
+        "img": "https://media.istockphoto.com/photos/dubai-marina-picture-id467829216?b=1&k=20&m=467829216&s=170667a&w=0&h=axrdEjmP9M3aUtuc-HKs5KIuQ-h02rz8xQKCkWiWpRI=",
+        "des": "Dubai Marina is an affluent residential neighborhood known for The Beach at JBR, a leisure complex with al fresco dining and sandy stretches to relax on. Smart cafes and pop-up craft markets line waterside promenade Dubai Marina Walk, while Dubai Marina Mall is packed with chain and luxury fashion brands",
+        "price": 196
+    },
+    {
+        "name": "karst landscape",
+        "img": "https://www.planetware.com/wpimages/2020/08/top-attractions-in-the-world-peru-machu-picchu-overview.jpg",
+        "des": "Yangshuo to the precipitous pillars in Zhangjiajie, from the Rainbow Mountains in Zhangye to the holy high land of Tibet, Chinas diverse natural beauty is as impressive as it is splendid culture.",
+        "price": 783
+    },
+    {
+        "name": "Pyramid",
+        "img": "https://www.planetware.com/photos-large/EGY/egypt-cairo-pyramids-of-giza.jpg",
+        "des": "A pyramid is a structure whose outer surfaces are triangular and converge to a single step at the top, making the shape roughly a pyramid in the geometric sense. The base of a pyramid can be trilateral, quadrilateral, or of any polygon shape. As such, a pyramid has at least three outer triangular surfaces",
+        "price": 232
+    },
+    {
+        "name": "china great wall and mountain",
+        "img": "https://www.planetware.com/photos-large/CHN/china-great-wall-and-mountain.jpg",
+        "des": "The Great Wall of China (traditional Chinese: 萬里長城; simplified Chinese: 万里长城; pinyin: Wànlǐ Chángchéng) is a series of fortifications that were built across the historical northern borders of ancient Chinese states and Imperial China as protection against various nomadic groups from the Eurasian Steppe",
+        "price": 324
+    },
+    {
+        "name": "taj mahal",
+        "img": "https://www.planetware.com/photos-large/IND/india-top-attractions-taj-mahal.jpg",
+        "des": "An immense mausoleum of white marble, built in Agra between 1631 and 1648 by order of the Mughal emperor Shah Jahan in memory of his favourite wife, the Taj Mahal is the jewel of Muslim art in India and one of the universally admired masterpieces of the worlds heritage",
+        "price": 532
+    }
+]

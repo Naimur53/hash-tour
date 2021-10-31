@@ -1,23 +1,47 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
+import AddService from './Components/AddService/AddService';
+import Home from './Components/Home/Home';
+import Login from './Components/Login/Login';
+import MainNav from './Components/MainNav/MainNav';
+import ManageOrders from './Components/ManageOrders/ManageOrders';
+import MyOrders from './Components/MyOrders/MyOrders';
+import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import AuthProvider from './context/AuthProvider';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+        <Router>
+          <MainNav></MainNav>
+          <Switch>
+            <Route exact path='/'>
+              <Home></Home>
+            </Route>
+            <Route path='/home'>
+              <Home></Home>
+            </Route>
+            <Route path='/login'>
+              <Login></Login>
+            </Route>
+            <PrivateRoute path='/placeOrder/:id'>
+              <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
+            <PrivateRoute path='/myOrders'>
+              <MyOrders></MyOrders>
+            </PrivateRoute>
+            <PrivateRoute path='/manageOrders'>
+              <ManageOrders></ManageOrders>
+            </PrivateRoute>
+            <Route path='/addService'>
+              <AddService></AddService>
+            </Route>
+          </Switch>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
